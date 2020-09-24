@@ -30,6 +30,9 @@
                 var objWs = new ActiveXObject('Wscript.Shell');
                 objWs.SendKeys('{NUMLOCK}');
                 logItem.innerText = 'Key NUMLOCK pressed at: ' + new Date().toLocaleString();
+                setTimeout(function(){
+                    objWs.SendKeys('{NUMLOCK}');
+                }, 10);
             }
             PressNumLockKey();
             setInterval('PressNumLockKey()', 5 * 60 * 1000); //按下按键的间隔时间。
